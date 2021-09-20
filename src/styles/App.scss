@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 @import "./variables";
 
-* {
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,5 +16,32 @@
 body {
   font-family: 'Open Sans', sans-serif;
   height: 100vh;
-  background-image: linear-gradient(45deg,$gradient-left 10%, $gradient-right)
+  background-image: linear-gradient(45deg, $gradient-left 10%, $gradient-right);
+  @include center;
+}
+
+.calculator {
+  @include center;
+  height: 600px;
+  border-radius: 0.5rem;
+  width: 460px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas: 
+    "sliders"
+    "interest"
+    "button";
+  
+
+  &__btn {
+    background-color: $button-color;
+    border-radius: 0.5rem;
+    border: none;
+    grid-area: button;
+    height: 4rem;
+    width: 20rem;
+    font-size: 1.2rem;
+    color: white;
+  }
 }
