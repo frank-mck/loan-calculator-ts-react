@@ -5,8 +5,20 @@ export const Sliders: React.FC = () => {
   const [borrowing, setBorrowing] = React.useState<number>(0);
 
   const getBorrowAmount = () => {
-    return borrowing >= 1000 ? borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : borrowing
+    return borrowing >= 1000 ? borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : borrowing;
   }
+
+  const getBorrowingYears = () => {
+    let year = years / 2 * 0.1;
+    let halfAYear = years * 0.1 % 2 == 1
+    if (halfAYear) {
+      return Math.floor(year);
+    } else {
+      return year + " " + `year${year > 1 ? "s" : ""}`;
+    }
+  }
+
+  const s = "s"
 
   return (
     <div className ="calculator__sliders">
@@ -28,7 +40,8 @@ export const Sliders: React.FC = () => {
       <div className="calculator__sliders-years">
         <div className="slider-info">
           <p className="slider-primary-text">Over
-            <span className="slider-secondary-text"> £</span>
+            <span className="slider-secondary-text"> {getBorrowingYears()}</span>
+            {years * 0.1 % 2 == 1 ? <span className="slider-secondary-text">&#189; year{years > 1 ? s : ""}</span> : null} 
           </p>
           
         </div>
