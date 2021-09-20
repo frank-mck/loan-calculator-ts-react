@@ -20,10 +20,10 @@ body {
   @include center;
 }
 
-.calculator {
-  height: 500px;
+.loan-calculator {
+  height: 31.5rem;
   border-radius: 0.5rem;
-  width: 350px;
+  width: 21.5rem;
   background-color: white;
   box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
   display: grid;
@@ -41,13 +41,13 @@ body {
     justify-content: space-evenly;
 
     &__sliders > div > input {
-      width: 80px;
+      width: 5rem;
     }
   }
 
   & .slider-1, .slider-2 {
     -webkit-appearance: none;
-    width: 270px;
+    width: 17rem;
     height: 7px;
     border-radius: 5px;  
     background: $slider-background;
@@ -58,8 +58,8 @@ body {
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 22px;
-      height: 22px;
+      width: 1.4rem;
+      height: 1.4rem;
       border-radius: 50%; 
       background: $button-color;
       cursor: pointer;
@@ -76,13 +76,13 @@ body {
 
   & .slider-primary-text {
     color: $primary-color;
-    font-size: 15px;
+    font-size: .9.5rem;
     font-weight: 400;
   }
 
   & .slider-secondary-text {
     color: $secondary-color;
-    font-size: 25px;
+    font-size: 1.6rem;
     font-weight: 200;
   }
 
@@ -106,7 +106,7 @@ body {
 
      & .secondary-text {
         color: $secondary-color;
-        font-size: 35px;
+        font-size: 2.2rem;
         font-weight: 300;
       }
     }
@@ -118,7 +118,7 @@ body {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
   
-    & .calculator__btn {
+    & .loan-calculator__btn {
       background-color: $button-color;
       border-radius: 0.5rem;
       border: none;
@@ -128,5 +128,11 @@ body {
       font-size: 1.2rem;
       color: white;
     }
+  }
+}
+
+@media (max-width: 368px) {
+  html {
+    font-size: 10px;
   }
 }

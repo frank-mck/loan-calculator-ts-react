@@ -1,11 +1,11 @@
 import React from 'react';
-import { Calculator } from './components/Calculator';
+import { LoanCalculator } from './components/LoanCalculator';
 import './styles/App.css'
 
 function App() {
   return (
     <div className="App">
-      <Calculator />
+      <LoanCalculator />
     </div>
   );
 }

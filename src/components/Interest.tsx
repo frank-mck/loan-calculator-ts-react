@@ -15,14 +15,14 @@ export const Interest: React.FC<any> = ({ years, borrowing }) => {
     }
   }
 
-  const getMonthlyPayments = (): any => {
+  const getMonthlyPayments = (): number => {
     let numOfPayments = 12 * years * 0.1 / 2;
     let interest = 28.6 * 0.01 
     return borrowing * (interest/12)*Math.pow((1+interest/12), numOfPayments) / (Math.pow((1+interest/12), numOfPayments) -1);
   }
 
   return (
-    <div className="calculator__interest">
+    <div className="loan-calculator__interest">
       <div className="interest-rate">
         <h2 className= "secondary-text">{getInterestRate()}%</h2>
         <h4>Interest rate</h4>

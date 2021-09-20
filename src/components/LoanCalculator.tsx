@@ -3,13 +3,18 @@ import { Button } from './Button';
 import { Amount } from './enums/Enums';
 import { Interest } from './Interest';
 
-export const Sliders: React.FC = () => {
+export const LoanCalculator: React.FC = () => {
   const [years, setYears] = React.useState<number>(50);
   const [borrowing, setBorrowing] = React.useState<number>(Amount.Minimum);
 
   const getBorrowAmount = (): string | number => {
-    return borrowing >= Amount.Minimum ? borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : borrowing;
-  }
+    if (borrowing >= Amount.Minimum) {
+      // if the amount selected is equal or greater than 1000, insert a comma
+      return borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      } else {
+      return borrowing;
+      }
+    }
 
   const getBorrowingYears = (): string | number => {
     let year = years / 2 * 0.1;
@@ -22,11 +27,11 @@ export const Sliders: React.FC = () => {
   }
 
   return (
-    <div className="calculator">
-    <div className ="calculator__sliders">
+    <div className="loan-calculator">
+    <div className ="loan-calculator__sliders">
 
       {/* This is the slider to chose amount to borrow */}
-      <div className="calculator__sliders-borrow">
+      <div className="loan-calculator__sliders-borrow">
         <div className="slider-info">
           <p className="slider-primary-text">I want to borrow <span className="slider-secondary-text">
               £{`${getBorrowAmount()}.00`}
@@ -41,7 +46,7 @@ export const Sliders: React.FC = () => {
       </div>
 
       {/* This is the slider to chose amount of years to borrow */}
-      <div className="calculator__sliders-years">
+      <div className="loan-calculator__sliders-years">
         <div className="slider-info">
           <p className="slider-primary-text">Over
             <span className="slider-secondary-text"> {getBorrowingYears()}</span>
