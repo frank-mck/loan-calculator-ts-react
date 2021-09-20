@@ -5,7 +5,7 @@ import App from '../App'
 test('checks default borrowing input values', () => {
   render(<App />);
   const slider = screen.getByTestId('borrow-slider');
-  expect(slider).toHaveValue('1');
+  expect(slider).toHaveValue('0');
 });
 
 test('checks default borrowing years input values', () => {

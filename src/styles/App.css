@@ -24,7 +24,7 @@ body {
 .calculator {
   height: 500px;
   border-radius: 0.5rem;
-  width: 380px;
+  width: 350px;
   background-color: white;
   -webkit-box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
           box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
@@ -62,6 +62,52 @@ body {
   width: 80px;
 }
 
+.calculator .slider-1, .calculator .slider-2 {
+  -webkit-appearance: none;
+  width: 290px;
+  height: 7px;
+  border-radius: 5px;
+  background: #ff00661f;
+  outline: none;
+  -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.calculator .slider-1::-webkit-slider-thumb, .calculator .slider-2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff0066;
+  cursor: pointer;
+}
+
+.calculator .slider-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.calculator .slider-primary-text {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.calculator .slider-secondary-text {
+  color: #999;
+  font-size: 25px;
+  font-weight: 200;
+}
+
 .calculator__interest {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,6 +132,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+}
+
+.calculator__interest .interest-rate h4, .calculator__interest .monthly-repayment h4 {
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .calculator__interest .interest-rate .secondary-text, .calculator__interest .monthly-repayment .secondary-text {
@@ -116,8 +168,8 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: button;
-  height: 4.3rem;
-  width: 20rem;
+  height: 4rem;
+  width: 17.5rem;
   font-size: 1.2rem;
   color: white;
 }

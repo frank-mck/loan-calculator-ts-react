@@ -23,7 +23,7 @@ body {
 .calculator {
   height: 500px;
   border-radius: 0.5rem;
-  width: 380px;
+  width: 350px;
   background-color: white;
   box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
   display: grid;
@@ -45,6 +45,45 @@ body {
     }
   }
 
+  & .slider-1, .slider-2 {
+    -webkit-appearance: none;
+    width: 290px;
+    height: 7px;
+    border-radius: 5px;  
+    background: $slider-background;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%; 
+      background: $button-color;
+      cursor: pointer;
+    }
+}
+
+  & .slider-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .slider-primary-text {
+    color: $primary-color;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  & .slider-secondary-text {
+    color: $secondary-color;
+    font-size: 25px;
+    font-weight: 200;
+  }
+
   &__interest {
     display: flex;
     align-items: center;
@@ -56,6 +95,12 @@ body {
       display: flex;
       flex-direction: column;
       text-align: center;
+
+      & h4 {
+        color: $primary-color;
+        font-size: 11px;
+        font-weight:600;
+      }
 
      & .secondary-text {
         color: $secondary-color;
@@ -76,8 +121,8 @@ body {
       border-radius: 0.5rem;
       border: none;
       grid-area: button;
-      height: 4.3rem;
-      width: 20rem;
+      height: 4rem;
+      width: 17.5rem;
       font-size: 1.2rem;
       color: white;
     }
