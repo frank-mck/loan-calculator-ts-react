@@ -22,6 +22,79 @@ body {
 }
 
 .calculator {
+  height: 500px;
+  border-radius: 0.5rem;
+  width: 380px;
+  background-color: white;
+  -webkit-box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
+          box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr;
+      grid-template-areas: "sliders" "interest" "button";
+}
+
+.calculator__sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sliders;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.calculator__sliders__sliders > div > input {
+  width: 80px;
+}
+
+.calculator__interest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: interest;
+  background-color: #f5f5f5;
+}
+
+.calculator__interest .interest-rate, .calculator__interest .monthly-repayment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.calculator__interest .interest-rate .secondary-text, .calculator__interest .monthly-repayment .secondary-text {
+  color: #999;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+.calculator__btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,25 +104,19 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 600px;
-  border-radius: 0.5rem;
-  width: 460px;
-  background-color: white;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 2fr 1fr 1fr;
-      grid-template-rows: 2fr 1fr 1fr;
-      grid-template-areas: "sliders" "interest" "button";
+  background-color: #000;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
-.calculator__btn {
+.calculator__btn-container .calculator__btn {
   background-color: #ff0066;
   border-radius: 0.5rem;
   border: none;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: button;
-  height: 4rem;
+  height: 4.3rem;
   width: 20rem;
   font-size: 1.2rem;
   color: white;

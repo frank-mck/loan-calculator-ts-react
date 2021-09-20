@@ -5,6 +5,5 @@ import App from '../App'
 test('renders learn react link', () => {
   render(<App />);
   const button = screen.getByTestId('button');
-  expect(button).toBeInTheDocument()
-
+  expect(button).toBeInTheDocument();
 });
