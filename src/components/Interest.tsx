@@ -1,17 +1,34 @@
 import React from 'react'
+import { Amount, InterestRate } from './enums/Enums'
 
-export const Interest: React.FC = () => {
+export const Interest: React.FC<any> = ({ years, borrowing }) => {
 
-  
+  const getInterestRate = (): number => {
+    if (borrowing >= Amount.Minimum && borrowing <= 5000) {
+      return InterestRate.Rate5;
+    } else if (borrowing > 5000 && borrowing <= 10000) {
+      return InterestRate.Rate10;
+    } else if (borrowing > 10000 && borrowing <= 15000) {
+      return InterestRate.Rate15;
+    } else {
+      return InterestRate.Rate20;
+    }
+  }
+
+  const getMonthlyPayments = (): any => {
+    let numOfPayments = 12 * years * 0.1 / 2;
+    let interest = 28.6 * 0.01 
+    return borrowing * (interest/12)*Math.pow((1+interest/12), numOfPayments) / (Math.pow((1+interest/12), numOfPayments) -1);
+  }
 
   return (
     <div className="calculator__interest">
       <div className="interest-rate">
-        <h2 className= "secondary-text">10%</h2>
+        <h2 className= "secondary-text">{getInterestRate()}%</h2>
         <h4>Interest rate</h4>
       </div>
       <div className="monthly-repayment">
-        <h2 className = "secondary-text">£300</h2>
+        <h2 className = "secondary-text">£{getMonthlyPayments().toFixed(2)}</h2>
         <h4>Monthly repayment</h4>
       </div>
     </div>

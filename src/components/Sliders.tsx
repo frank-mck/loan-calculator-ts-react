@@ -1,9 +1,11 @@
 import React from 'react'
-import { Amount } from './Enums';
+import { Button } from './Button';
+import { Amount } from './enums/Enums';
+import { Interest } from './Interest';
 
 export const Sliders: React.FC = () => {
   const [years, setYears] = React.useState<number>(50);
-  const [borrowing, setBorrowing] = React.useState<number>(0);
+  const [borrowing, setBorrowing] = React.useState<number>(Amount.Minimum);
 
   const getBorrowAmount = (): string | number => {
     return borrowing >= Amount.Minimum ? borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : borrowing;
@@ -20,6 +22,7 @@ export const Sliders: React.FC = () => {
   }
 
   return (
+    <div className="calculator">
     <div className ="calculator__sliders">
 
       {/* This is the slider to chose amount to borrow */}
@@ -31,7 +34,7 @@ export const Sliders: React.FC = () => {
           </p>
         </div>
         <input data-testid="borrow-slider" type="range"
-          min="0" className="slider-1" max="20000" 
+          min="1000" className="slider-1" max="20000" 
           value={borrowing} step="100"
           onChange={(e) => setBorrowing(parseInt(e.target.value))}>
         </input>
@@ -51,6 +54,9 @@ export const Sliders: React.FC = () => {
           className="slider-2" step="10">
         </input>
       </div>
+      </div>
+      <Interest years={years} borrowing={borrowing}/>
+      <Button />
     </div>
   )
 }
