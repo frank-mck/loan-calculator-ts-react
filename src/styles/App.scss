@@ -47,7 +47,7 @@ body {
 
   & .slider-1, .slider-2 {
     -webkit-appearance: none;
-    width: 290px;
+    width: 270px;
     height: 7px;
     border-radius: 5px;  
     background: $slider-background;
@@ -58,18 +58,20 @@ body {
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 25px;
-      height: 25px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%; 
       background: $button-color;
       cursor: pointer;
+      box-shadow: 0 0 0 5px $slider-btn;
     }
-}
+  }
 
   & .slider-info {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
   }
 
   & .slider-primary-text {

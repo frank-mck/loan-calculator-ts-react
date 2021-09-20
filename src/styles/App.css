@@ -64,7 +64,7 @@ body {
 
 .calculator .slider-1, .calculator .slider-2 {
   -webkit-appearance: none;
-  width: 290px;
+  width: 270px;
   height: 7px;
   border-radius: 5px;
   background: #ff00661f;
@@ -77,11 +77,13 @@ body {
 .calculator .slider-1::-webkit-slider-thumb, .calculator .slider-2::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: #ff0066;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 0 5px #ff006659;
+          box-shadow: 0 0 0 5px #ff006659;
 }
 
 .calculator .slider-info {
@@ -94,6 +96,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .calculator .slider-primary-text {

@@ -4,11 +4,11 @@ export const Sliders: React.FC = () => {
   const [years, setYears] = React.useState<number>(50);
   const [borrowing, setBorrowing] = React.useState<number>(0);
 
-  const getBorrowAmount = () => {
+  const getBorrowAmount = (): string | number => {
     return borrowing >= 1000 ? borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : borrowing;
   }
 
-  const getBorrowingYears = () => {
+  const getBorrowingYears = (): string | number => {
     let year = years / 2 * 0.1;
     let halfAYear = years * 0.1 % 2 == 1
     if (halfAYear) {
@@ -18,15 +18,13 @@ export const Sliders: React.FC = () => {
     }
   }
 
-  const s = "s"
-
   return (
     <div className ="calculator__sliders">
 
       <div className="calculator__sliders-borrow">
         <div className="slider-info">
           <p className="slider-primary-text">I want to borrow <span className="slider-secondary-text">
-              £{getBorrowAmount()}
+              £{getBorrowAmount() + ".00"}
             </span>
           </p>
         </div>
@@ -41,12 +39,12 @@ export const Sliders: React.FC = () => {
         <div className="slider-info">
           <p className="slider-primary-text">Over
             <span className="slider-secondary-text"> {getBorrowingYears()}</span>
-            {years * 0.1 % 2 == 1 ? <span className="slider-secondary-text">&#189; year{years > 1 ? s : ""}</span> : null} 
+            {years * 0.1 % 2 == 1 ? <span className="slider-secondary-text">&#189; year{years > 1 ? "s" : ""}</span> : null} 
           </p>
           
         </div>
         <input data-testid="years-slider" type="range" 
-          min="0" max="100" value={years} 
+          min="20" max="100" value={years} 
           onChange={(e) => setYears(parseInt(e.target.value))} 
           className="slider-2" step="10">
         </input>
