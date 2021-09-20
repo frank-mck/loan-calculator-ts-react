@@ -6,13 +6,33 @@ export const Sliders: React.FC = () => {
 
   return (
     <div className ="calculator__sliders">
+
       <div className="calculator__sliders-borrow">
         <p>I want to borrow</p>
-        <input type="range" min="1" className="slider-1" max="100" value={borrowing} onChange={(e) => setBorrowing(parseInt(e.target.value))}></input>
+        <input 
+          data-testid="borrow-slider"
+          type="range"
+          min="1" 
+          className="slider-1" 
+          max="100" 
+          value={borrowing} 
+          onChange={(e) => setBorrowing(parseInt(e.target.value))}>
+        </input>
       </div>
+
       <div className="calculator__sliders-years">
         <p>Over</p>
-        <input type="range" min="1" max="100" value={years} onChange={(e) => setYears(parseInt(e.target.value))} className="slider-2" id="myRange"></input>
+        <input 
+          data-testid="years-slider"
+          type="range" 
+          min="1" 
+          max="100" 
+          value={years} 
+          onChange={(e) => setYears(parseInt(e.target.value))} 
+          className="slider-2" 
+          id="myRange">
+        </input>
+
       </div>
     </div>
   )
