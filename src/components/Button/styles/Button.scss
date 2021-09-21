@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.loan-calculator__btn-container {
+  @include center;
+  background-color: $primary-color;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  & .loan-calculator__btn {
+    background-color: $button-color;
+    border-radius: 0.5rem;
+    border: none;
+    grid-area: button;
+    height: 4rem;
+    width: 17rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+}

@@ -1,0 +1,68 @@
+@import '../../../styles/variables';
+
+.loan-calculator {
+  height: 30.5rem;
+  border-radius: 0.5rem;
+  width: 21.5rem;
+  background-color: white;
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.466);
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas: 
+    "sliders"
+    "interest"
+    "button";
+
+  &__sliders {
+    display: flex;
+    flex-direction: column;
+    grid-area: sliders;
+    @include center;
+    justify-content: space-evenly;
+
+    &__sliders > div > input {
+      width: 5rem;
+    }
+  }
+
+  & .slider-1, .slider-2 {
+    -webkit-appearance: none;
+    width: 17rem;
+    height: 7px;
+    border-radius: 5px;  
+    background: $slider-background;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%; 
+      background: $button-color;
+      cursor: pointer;
+      box-shadow: 0 0 0 5px $slider-btn;
+    }
+  }
+
+  & .slider-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  & .slider-primary-text {
+    color: $primary-color;
+    font-size: .9.5rem;
+    font-weight: 400;
+  }
+
+  & .slider-secondary-text {
+    color: $secondary-color;
+    font-size: 1.6rem;
+    font-weight: 200;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Amount, InterestRate } from './enums/Enums'
+import './/styles/Interest.css';
+import { Amount, InterestRate } from '../enums/Enums'
 
 export const Interest: React.FC<any> = ({ years, borrowing }) => {
 
@@ -24,11 +25,11 @@ export const Interest: React.FC<any> = ({ years, borrowing }) => {
   return (
     <div className="loan-calculator__interest">
       <div className="interest-rate">
-        <h2 className= "secondary-text">{getInterestRate()}%</h2>
+        <h2 data-testid="interest" className= "secondary-text">{getInterestRate()}%</h2>
         <h4>Interest rate</h4>
       </div>
       <div className="monthly-repayment">
-        <h2 className = "secondary-text">£{getMonthlyPayments().toFixed(2)}</h2>
+        <h2 data-testid="repayments" className = "secondary-text">£{getMonthlyPayments().toFixed(2)}</h2>
         <h4>Monthly repayment</h4>
       </div>
     </div>
