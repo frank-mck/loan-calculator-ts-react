@@ -23,7 +23,7 @@ describe("Intrest" , () => {
     expect(subject).toHaveTextContent('10%');
   });
 
-  test('change length of loan to adjust monthly repayments', () => {
+  test('change length the of loan to adjust monthly repayments', () => {
     render(<App />);
     const slider = screen.getByTestId('years-slider');
     fireEvent.change(slider, { target: { value: "100" } });

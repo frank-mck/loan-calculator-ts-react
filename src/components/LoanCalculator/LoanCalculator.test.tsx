@@ -1,7 +1,6 @@
 import React from 'react';
 import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
 import App from '../../App'
-import { Amount } from '../enums/Enums';
 
 describe('loan calculator', () => {
   test('checks default length of loan', () => {
@@ -26,7 +25,7 @@ describe('loan calculator', () => {
     expect(amount).toHaveTextContent('I want to borrow £7,500.00')
   });
 
-  test('Change the length of loan', () => {
+  test('Change the length of the loan', () => {
     render(<App />);
     const years = screen.getByTestId('years')
     const slider = screen.getByTestId('years-slider');
