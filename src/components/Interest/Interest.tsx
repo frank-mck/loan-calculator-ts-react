@@ -18,7 +18,7 @@ export const Interest: React.FC<any> = ({ years, borrowing }) => {
 
   const getMonthlyPayments = (): number => {
     let numOfPayments = 12 * years * 0.1 / 2;
-    let interest = 28.6 * 0.01 
+    let interest = getInterestRate() * 0.01 
     return borrowing * (interest/12)*Math.pow((1+interest/12), numOfPayments) / (Math.pow((1+interest/12), numOfPayments) -1);
   }
 
