@@ -34,12 +34,12 @@ export const LoanCalculator: React.FC = () => {
         {/* This is the slider to chose amount to borrow */}
         <div className="loan-calculator__sliders-borrow">
           <div className="slider-info">
-            <p className="slider-primary-text">I want to borrow <span className="slider-secondary-text">
+            <p data-testid="amount" className="slider-primary-text">I want to borrow <span className="slider-secondary-text">
                 £{`${getBorrowAmount()}.00`}
               </span>
             </p>
           </div>
-          <input data-testid="borrow-slider" type="range"
+          <input data-testid="amount-slider" type="range"
             min="1000" className="slider-1" max="20000" 
             value={borrowing} step="100"
             onChange={(e) => setBorrowing(parseInt(e.target.value))}>
@@ -49,7 +49,7 @@ export const LoanCalculator: React.FC = () => {
         {/* This is the slider to chose amount of years to borrow */}
         <div className="loan-calculator__sliders-years">
           <div className="slider-info">
-            <p className="slider-primary-text">Over
+            <p data-testid="years" className="slider-primary-text">Over
               <span className="slider-secondary-text"> {getBorrowingYears()}</span>
               {years * 0.1 % 2 === 1 ? <span className="slider-secondary-text">&#189; year{years > 1 ? "s" : ""}</span> : null} 
             </p>
