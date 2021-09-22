@@ -1,6 +1,6 @@
 # Loan-calculator
 
-## Task
+## Tech test task
 
 Develop a loan calculator that calculates an interest rate and monthly repayments.
 
