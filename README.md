@@ -6,7 +6,7 @@ Develop a loan calculator that calculates an interest rate and monthly repayment
 
 ## Screenshot
 
-<img alt ='loan calculator' src =""  width="600px" style="display: block;">
+<img alt ='loan calculator' src ="https://raw.githubusercontent.com/frank-mck/lendable-tech-test/main/img/lendable-tech-test-screenshot.png?token=ASO6TKQXRRPO7XLBX5HBAZ3BJNYPG"  width="600px" style="display: block;">
 
 ## How to use
 
