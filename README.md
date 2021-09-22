@@ -14,7 +14,7 @@ Develop a loan calculator that calculates an interest rate and monthly repayment
 
 Clone this repo to your local computer
 ```
-git clone https://github.com/frank-mck/lendable-tech-test.git
+git clone https://github.com/frank-mck/loan-calculator-ts-react.git
 ```
 Then cd into this repo and install npm packages
 ```
