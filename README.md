@@ -1,4 +1,4 @@
-# Lenable tech test
+# Loan-calculator
 
 ## Task
 
@@ -18,7 +18,7 @@ git clone https://github.com/frank-mck/loan-calculator-ts-react.git
 ```
 Then cd into this repo and install npm packages
 ```
-cd lendable-tech-tests
+cd loan-calculator-ts-react
 npm install
 ```
 
