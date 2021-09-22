@@ -8,7 +8,7 @@ export const LoanCalculator: React.FC = () => {
   const [years, setYears] = React.useState<number>(50);
   const [borrowing, setBorrowing] = React.useState<number>(Amount.Minimum);
 
-  const getBorrowAmount = (): string | number => {
+  const getBorrowAmount = (): string => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'GBP' }).format(borrowing) 
   }
 

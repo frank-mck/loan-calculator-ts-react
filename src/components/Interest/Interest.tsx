@@ -2,7 +2,12 @@ import React from 'react'
 import './/styles/Interest.css';
 import { Amount, InterestRate } from '../enums/Enums'
 
-export const Interest: React.FC<any> = ({ years, borrowing }) => {
+interface InterestProps {
+  years: number,
+  borrowing: number
+}
+
+export const Interest: React.FC<InterestProps> = ({ years, borrowing }) => {
 
   const getInterestRate = (): number => {
     if (borrowing >= Amount.Minimum && borrowing <= 5000) {
