@@ -6,7 +6,7 @@ describe("Intrest" , () => {
   test('checks default monthly payments', () => {
     render(<App />);
     const subject = screen.getByTestId('repayments');
-    expect(subject).toHaveTextContent('£47.04');
+    expect(subject).toHaveTextContent('£35.53');
   });
   
   test('checks default interest rate', () => {
@@ -28,6 +28,6 @@ describe("Intrest" , () => {
     const slider = screen.getByTestId('years-slider');
     fireEvent.change(slider, { target: { value: "100" } });
     const subject = screen.getByTestId('repayments');
-    expect(subject).toHaveTextContent('£31.50');
+    expect(subject).toHaveTextContent('£18.87');
   });
 })

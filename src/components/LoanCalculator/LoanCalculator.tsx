@@ -9,19 +9,14 @@ export const LoanCalculator: React.FC = () => {
   const [borrowing, setBorrowing] = React.useState<number>(Amount.Minimum);
 
   const getBorrowAmount = (): string | number => {
-    if (borrowing >= Amount.Minimum) {
-      // if the amount selected is equal or greater than 1000, insert a comma
-      return borrowing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      } else {
-      return borrowing;
-      }
-    }
+    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'GBP' }).format(borrowing) 
+  }
 
-  const getBorrowingYears = (): string | number => {
-    let year = years / 2 * 0.1;
-    let halfAYear = years * 0.1 % 2 === 1
+  const getBorrowingYears = (): React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> | string => {
+    let year = years / 2 * 0.1, halfAYear = years * 0.1 % 2 === 1;
     if (halfAYear) {
-      return Math.floor(year);
+      return <span className="slider-secondary-text">
+        {Math.floor(year)}&#189; {years > 1 ? "years" : "year"}</span>
     } else {
       return `${year} ${year > 1 ? "years" : "year"}`;
     }
@@ -30,17 +25,17 @@ export const LoanCalculator: React.FC = () => {
   return (
     <div className="loan-calculator">
       <div className ="loan-calculator__sliders">
-
         {/* This is the slider to chose amount to borrow */}
         <div className="loan-calculator__sliders-borrow">
           <div className="slider-info">
-            <p data-testid="amount" className="slider-primary-text">I want to borrow <span className="slider-secondary-text">
-                £{`${getBorrowAmount()}.00`}
+            <p data-testid="amount" className="slider-primary-text">
+              I want to borrow <span className="slider-secondary-text">
+              {getBorrowAmount()}
               </span>
             </p>
           </div>
           <input data-testid="amount-slider" type="range"
-            min="1000" className="slider-1" max="20000" 
+            min="1000" className="slider" max="20000" 
             value={borrowing} step="100"
             onChange={(e) => setBorrowing(parseInt(e.target.value))}>
           </input>
@@ -51,13 +46,12 @@ export const LoanCalculator: React.FC = () => {
           <div className="slider-info">
             <p data-testid="years" className="slider-primary-text">Over
               <span className="slider-secondary-text"> {getBorrowingYears()}</span>
-              {years * 0.1 % 2 === 1 ? <span className="slider-secondary-text">&#189; year{years > 1 ? "s" : ""}</span> : null} 
             </p>
           </div>
           <input data-testid="years-slider" type="range" 
             min="20" max="100" value={years} 
             onChange={(e) => setYears(parseInt(e.target.value))} 
-            className="slider-2" step="10">
+            className="slider" step="10">
           </input>
         </div>
         </div>

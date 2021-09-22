@@ -39,7 +39,7 @@
   width: 5rem;
 }
 
-.loan-calculator .slider-1, .loan-calculator .slider-2 {
+.loan-calculator .slider {
   -webkit-appearance: none;
   width: 17rem;
   height: 7px;
@@ -51,7 +51,7 @@
   transition: opacity .2s;
 }
 
-.loan-calculator .slider-1::-webkit-slider-thumb, .loan-calculator .slider-2::-webkit-slider-thumb {
+.loan-calculator .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 1.4rem;
