@@ -4,6 +4,9 @@
 
 Develop a loan calculator that calculates an interest rate and monthly repayments.
 
+## Screenshot
+
+<img alt ='loan calculator' src =""  width="600px" style="display: block;">
 
 ## How to use
 
