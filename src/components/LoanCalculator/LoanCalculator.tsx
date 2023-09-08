@@ -12,7 +12,7 @@ export const LoanCalculator: React.FC = () => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'GBP' }).format(borrowing) 
   }
 
-  const getBorrowingYears = (): React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> | string => {
+  const getBorrowingYears = (): any => {
     let year = years / 2 * 0.1, halfAYear = years * 0.1 % 2 === 1;
     if (halfAYear) {
       return <span className="slider-secondary-text">
